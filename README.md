@@ -1,6 +1,7 @@
 # learning_haskell
 
 reference: http://www.haskell.org/
+
 books: Graham Hutton, “Programming in Haskell”
 
 in preparazione agli esami, magistrale Unipi
