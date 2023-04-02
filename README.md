@@ -4,7 +4,7 @@ reference: http://www.haskell.org/
 
 books: Graham Hutton, “Programming in Haskell”
 
-in preparazione agli esami, magistrale Unipi
+in preparazione agli esami (magistrale Unipi)
 - Advanced Programming
 - Principles for Software Composition
 
