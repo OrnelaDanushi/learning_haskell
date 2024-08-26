@@ -1,10 +1,10 @@
 :?
 
 :set +t 
--- to get info about each operators, that are treated like containers, as
+-- to get info about each operator, each one is treated like containers, as
 
--- plus, times .. are left associative
--- the power * is right associative
+-- plus, times .. are left-associative
+-- the power * is right-associative
 :t (*)
 
 -- div 7 2 to take the integer part
@@ -13,7 +13,7 @@
 
 -- /= is the different operation as 2 /= 3 gives True
 :t (>)
-:t show -- is a type class, in it there are not functions, so functions cannot be printed into the screan
+:t show -- is a type class, in it there are no functions, so functions cannot be printed into the screen
 
 :t read
 read "5" -- here it has no info about the type of 5 rather than it is a string
@@ -33,7 +33,7 @@ zip [1..26] ['a'..'z'] -- makes the cartesian product for each pair of elements
 [(x,y,z) | x<-[1..10], y<-[1..10], z<-[1..10], x+y+z==24, z^2==x^2+y^2]
 -- [(6,8,18),(8,6,10)]
 
-:set +m --allows to write multi line formulas
+:set +m --allows to write multi-line formulas
 let f = \x -> x
     g = \y -> y
 -- f == g will give an error since is not possible to compare functions, they are both the identity function
@@ -43,20 +43,20 @@ let max a b = if a>b then a else b
 let max a b
       | a>b = a
       | b>a = b
--- with max 2 2 it gives an error since is not handled this step in the defenition of the combinations
+-- with max 2 2 it gives an error since is not handled this step in the definition of the combinations
 let max a b
       | a>b = a
       | b>a = b
       | otherwise = a
 
--- max (2, 3) it gives an error because the defined argument was of of 2 values and not of a pair of values
--- this can be fixed with the carrying and uncarrying feature
+-- max (2, 3) it gives an error because the defined argument was of 2 values and not of a pair of values
+-- this can be fixed with the carrying and un-carrying feature
 
 -- pattern matching and case analysis with lists
 let empty [] = True
     empty (x:xs) = False
 
-let (^^) x y = x^2 + y^2  -- is an infix ooperator as 3 ^^ 4
+let (^^) x y = x^2 + y^2  -- is an infix operator as 3 ^^ 4
 let infixl ^^
     (^^) x y = x^2 + y^2
 
@@ -143,7 +143,7 @@ let myzip [] ys = []
 -- given a list return the pairs of adjacent elements
 let pairs xs = zip xs (tail xs)
 
--- check if a list is sortedd using the above functions
+-- check if a list is sorted using the above functions
 let sorted xs = [.. |(x1,x2) <- (pairs xs), x1<=x2]
 let sorted xs = null [1 | (x1,x2)<-(pairs xs), x1>x2]
 
