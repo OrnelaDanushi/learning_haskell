@@ -12,8 +12,8 @@ let pal [] = True
 let pal xs = reverse xs == xs
 
 -- if the list is palindrome we must go to check each element and this is expensive
--- can we do less checks? is it necessary to go to check each of them?
--- no is enougth to check half of it
+-- can we do fewer checks? is it necessary to go to check each of them?
+-- no is enough to check half of it
 let pal1 xs = half xs == (half . reverse $ xs)
          where half ys = take (length ys `div` 2) ys
 
@@ -21,7 +21,7 @@ let pal1 xs = half xs == (half . reverse $ xs)
 let pals = filter pal
 pals ["civic", "hello", "anna", "desserts stressed"]
 
--- function select that takes a list of integers and return the list of elements that are followed by its immediate successor
+-- function select that takes a list of integers and returns the list of elements that are followed by its immediate successor
 -- as select [1,2,5,7,3,4] must evaluate to [1,3]
 let select xs = [x | (x,y) <- zip xs (tail xs), y == succ x]
 
@@ -41,7 +41,7 @@ let perfect n = n == sumproper n
 let perfects = filter perfect [1..]
 take 4 perfects
 
--- generate the list of fibonacci numbers
+-- generate the list of Fibonacci numbers
 let fibs = [fib n | n <- [1..]]
          where fib 1 = 1
                fib 2 = 1
